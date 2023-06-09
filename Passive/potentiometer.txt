@@ -1,0 +1,8 @@
+.SUBCKT potentiometer 1 2 3
+* Parameters: Rtot, wiper
+.param w=limit(0.01m,wiper,0.99999)
+*
+R1 1 3 {Rtot*(1-w)}
+R2 3 2 {Rtot*(w)}
+.ENDS
+*

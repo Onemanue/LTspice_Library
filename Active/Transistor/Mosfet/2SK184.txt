@@ -1,0 +1,1 @@
+.model 2SK184 NJF (Beta=22.59m Rs=9.159 Rd=9.159 Betatce=-.5 Lambda=1.853f Vto=-.8914 Vtotc=-2.5m Cgd=8.59p M=.2921 Pb=.3905 Fc=.5 Cgs=14.37p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)

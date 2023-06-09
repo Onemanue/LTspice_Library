@@ -1,0 +1,71 @@
+* THAT 2181A VCA SPICE Macromodel, Beta Version 1.B3 12/30/97*
+* Copyright 1997 THAT Corporation, all rights reserved.
+*
+* Rev 01 RB 6-9-17
+* Changed names for THAT2181A, THAT2181B, THAT2181C
+* Changed pin names to match datasheet
+*
+*
+*
+* Note: Macromodel net numbers correspond to the IC package numbers.
+* 
+*
+*              		     Iin          
+*                		     |  Ec+ 
+*              		     |    |   Ec-
+*               		     |    |     |  Sym
+*                		     |    |     |    |  Vee
+*               		     |    |     |    |     |  GND
+*             		     |    |     |    |     |    |  Vcc
+*                  		     |    |     |    |     |    |     |    Iout
+*                 		     |    |     |    |     |    |     |    |
+.SUBCKT THAT2181A  1   2   3   4   5   6   7   8 
+*
+*
+*
+R1         10 13  2.5k  
+R2         10 14  2.5k  
+I1         10 29 DC 50uA  
+R3         11 7  8k  
+R4         12 7  8k  
+G1         7 15 11 12 1.25e-4
+R5         0 15  10MEG  
+R6         0 16  10k  
+C1         16 15  10p  
+R7         19 7  2k  
+G2         19 20 15 0 5e-4
+C2         19 7  8p  
+E1         20 28 30 0 2
+R8         5 29  1.7k  
+V1         0 29 DC 2.1V  
+I2         0 30 DC 20uA  
+R9         4 2  27  
+C3         20 0  12p  
+I3         20 28 DC 220uA  
+V2         18 0 DC .7V  
+V3         17 15 DC 1.4V  
+Q1         11 1 13 QNHIB 
+Q2         12 9 14 QNHIB 
+Q3         20 21 23 QNPNNOM 
+Q4         20 22 24 QNPNNOM 
+Q5         8 4 27 QNPNNOM 
+Q6         1 25 26 QNPNNOM 
+Q7         1 2 23 QPNPNOM 
+Q8         8 3 24 QPNPNOM 
+Q9         28 28 27 QPNPNOM 
+Q10        28 28 26 QPNPNOM 
+Q11        28 29 5 QNPNNOM 
+Q12        30 30 31 QNPNNOM 
+Q13        0 0 31 QPNPNOM 
+D1         18 15 DNOM 
+D2         17 7 DNOM 
+R10        3 25  22  
+R11        22 20 22  
+R12        21 20 27  
+Vos        9 6 DC 3mV  
+.model qnpnnom npn (is=1e-15 bf=200, vaf=110, cjc=3pF)
+.model qpnpnom pnp (is=1e-15 bf=100, vaf=85, cjc=5pf)
+.model qnhib npn (bf=16000)
+.model dnom d (is=1e-15)
+.ENDS   
+*
